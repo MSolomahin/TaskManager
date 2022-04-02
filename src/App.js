@@ -4,7 +4,6 @@ import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import About from "./pages/About";
 import Tasks from "./pages/Tasks";
 import Navbar from "./components/Navbar";
-import {createStore} from "redux";
 import {Provider} from "react-redux";
 import store from "./store";
 
