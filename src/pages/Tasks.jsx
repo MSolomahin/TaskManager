@@ -13,6 +13,7 @@ import { getPageCount } from "../utils/pages";
 import { getPageArray } from "../utils/pages";
 import MyButton from "../components/UI/MyButton";
 import {useDispatch, useSelector} from "react-redux";
+import Pagination from "../components/Pagination";
 
 function Tasks() {
 
@@ -69,15 +70,8 @@ function Tasks() {
         <TaskList
           tasks={SearchAndFilterTasks}
         />}
-
-        <hr style={{ margin: "20px 0", color: "black" }} />
-
-        {pagesArray.map((p,index) => {
-          return (<MyButton key = {index}
-          onClick = {() => changeTask(p)}>{p}</MyButton>)
-        })}
-
-        <hr style={{ margin: "20px 0", color: "black" }} />
+        <Pagination pagesArray = {pagesArray} changeTask= {changeTask}/>
+      
       </div>
     </div>
   );
