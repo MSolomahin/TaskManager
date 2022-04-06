@@ -6,20 +6,27 @@ import Tasks from "./pages/Tasks";
 import Navbar from "./components/Navbar";
 import {Provider} from "react-redux";
 import store from "./store";
+import base from '../base';
 
 function App() {
-    return (
-        <Provider store={store}>
-            <BrowserRouter>
-                <Navbar/>
-                <Routes>
-                    <Route path="/" element={<Tasks/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    <Route path="/tasks" element={<Tasks/>}/>
-                </Routes>
-            </BrowserRouter>
-        </Provider>
-    );
+
+// componentDidMount() {
+//     this.ref = base.syncState(`${}`)
+// }
+
+return (
+    <Provider store={store}>
+        <BrowserRouter>
+            <Navbar/>
+            <Routes>
+                <Route path="/" element={<Tasks/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/tasks" element={<Tasks/>}/>
+            </Routes>
+        </BrowserRouter>
+        
+    </Provider>
+);
 }
 
 export default App;
