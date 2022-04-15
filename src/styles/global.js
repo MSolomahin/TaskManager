@@ -10,7 +10,7 @@ export default createGlobalStyle`
 
   body {
     
-    background-color: #f5f5f5;
+    background-color: #F9F9F9;
   }
 
   .app {
@@ -18,4 +18,4 @@ export default createGlobalStyle`
     margin: 0 auto;
     padding: 0 20px;
   }
-`
+`;

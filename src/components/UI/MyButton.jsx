@@ -6,15 +6,14 @@ const Mybtn = styled.button`
   width: fit-content;
   appearance: none;
   border: 0;
-  border-radius: 5px;
-  background: #4676d7;
-  color: #fff;
-  padding: 8px 16px;
+  background: #ffedc3;
+  border-radius: 10px;
+  color: black;
+  padding: 11px 16px;
   font-size: 16px;
 
   :hover {
-    background: #1d49aa;
-    
+    background: #f8d57e;
   }
 
   :focus {

@@ -8,10 +8,8 @@ import {useDispatch, useSelector} from "react-redux";
 const CreateForm = styled.div`
  display: flex;
  flex-direction: column;
-
  gap: 10px;
 `
-
 
 const CreateTask = () => {
     const dispatch = useDispatch();

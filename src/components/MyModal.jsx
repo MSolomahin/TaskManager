@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
 
 const SModalContent = styled.div`
-  padding: 25px;
+  padding: 35px;
   background: white;
   border-radius: 16px;
   min-width: 250px;

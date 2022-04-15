@@ -1,19 +1,22 @@
-import React from 'react';
-import MyButton from './UI/MyButton';
+import React from "react";
+import MyButton from "./UI/MyButton";
+import styled from "styled-components";
 
-const Pagination = ({pagesArray, changeTask}) => {
-    return (
-        <div>
-            <hr style={{ margin: "20px 0", color: "black" }} />
-
-                {pagesArray.map((p,index) => {
-                return (<MyButton key = {index}
-                onClick = {() => changeTask(p)}>{p}</MyButton>)
-                })}
-
-            <hr style={{ margin: "20px 0", color: "black" }} />
-        </div>
-    );
+const SPagination = styled.div`
+  margin: 20px 0;
+`;
+const Pagination = ({ pagesArray, changeTask }) => {
+  return (
+    <SPagination>
+      {pagesArray.map((p, index) => {
+        return (
+          <MyButton key={index} onClick={() => changeTask(p)}>
+            {p}
+          </MyButton>
+        );
+      })}
+    </SPagination>
+  );
 };
 
 export default Pagination;
