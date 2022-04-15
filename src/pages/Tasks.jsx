@@ -50,7 +50,7 @@ function Tasks() {
   return (
     <div>
       <GlobalStyles />
-      <Header/>
+      <Header context={"Task Manager"} />
       <div className="app">
         <MyModal>
           <CreateTask />
@@ -58,7 +58,6 @@ function Tasks() {
         <ControlPanel
           setFind={setFind}
           sort={sort}
-
           setSort={setSort}
           option={[
             { value: "title", name: "По названию" },
@@ -66,12 +65,12 @@ function Tasks() {
           ]}
         />
         {taskError && <h1>{taskError}</h1>}
-        {isTaskLoading ? <h1>Идет загрузка...</h1> :
-        <TaskList
-          tasks={SearchAndFilterTasks}
-        />}
-        <Pagination pagesArray = {pagesArray} changeTask= {changeTask}/>
-      
+        {isTaskLoading ? (
+          <h1>Идет загрузка...</h1>
+        ) : (
+          <TaskList tasks={SearchAndFilterTasks} />
+        )}
+        <Pagination pagesArray={pagesArray} changeTask={changeTask} />
       </div>
     </div>
   );

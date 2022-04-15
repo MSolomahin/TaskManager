@@ -24,13 +24,11 @@ const MyHeaderContent = styled.div`
 
 
 
-const Header = (props) => {
-    
+const Header = ({context}) => {
   return (
     <MyHeader>
       <MyHeaderContent>
-        <h3>Task Manager</h3>
-        
+        <h3>{context}</h3>
       </MyHeaderContent>
     </MyHeader>
   );
