@@ -23,17 +23,16 @@ const SNavbarLinks = styled.div`
 const SLink = styled(Link)`
   font-size: 15px;
   font-weight: 600;
-  color: #8F8F8F;
+  color: #8f8f8f;
   margin-right: 20px;
   text-decoration: none;
 `;
-
 
 const Navbar = () => {
   return (
     <SNavbar>
       <SNavbarLinks>
-        <SLink to="/about">О сайте</SLink>
+        <SLink to="/about">О приложении</SLink>
         <SLink to="/tasks">Задачи</SLink>
       </SNavbarLinks>
     </SNavbar>

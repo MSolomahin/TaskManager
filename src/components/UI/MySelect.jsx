@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const MySelector = styled.select`
-  margin: 5px;
   width: 250px;
   border: 0px;
   border-radius: 10px;
@@ -17,7 +16,7 @@ const MySelector = styled.select`
 
 const MySelect = ({ sort, setSort, option }) => {
   return (
-    <MySelector style = {{margin: "5px"}} value={sort} onChange={(e) => setSort(e.target.value)}>
+    <MySelector value={sort} onChange={(e) => setSort(e.target.value)}>
       <option disabled value="">
         Сортировка
       </option>

@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Mybtn = styled.button`
-  margin: 5px;
   width: fit-content;
   appearance: none;
+  margin-right: 10px;
   border: 0;
   background: #ffedc3;
   border-radius: 10px;
@@ -13,12 +13,12 @@ const Mybtn = styled.button`
   font-size: 16px;
 
   :hover {
-    background: #f8d57e;
+    background: #ffefc6;
   }
 
   :focus {
     outline: none;
-    box-shadow: 0 0 0 4px #cbd6ee;
+    box-shadow: 0 0 0 4px #ffcb51bc;
   }
 `;
 

@@ -1,12 +1,11 @@
 import React from "react";
 import FilterTasks from "./FilterTasks";
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import KindList from "./KindList";
 import MyButton from "./UI/MyButton";
 import MySelect from "./UI/MySelect";
 import styled from "styled-components";
 import plus from "../assets/img/plus.png";
-
 
 const ControlUp = styled.div`
   height: 40px;
@@ -20,7 +19,7 @@ const MyHeaderBtn = styled(MyButton)`
   position: relative;
   align-items: start;
   display: flex;
-  gap : 5px;
+  gap: 5px;
   margin-left: auto;
 `;
 

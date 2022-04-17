@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MyButton from "./UI/MyButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import ucFirst from "../utils/function";
 
 const Item = styled.div`
   display: flex;
@@ -17,7 +18,6 @@ const Item = styled.div`
   padding: 20px;
   background-color: white;
   gap: 10px;
-  
 `;
 
 const TitleItem = styled.h3`
@@ -27,19 +27,18 @@ const TitleItem = styled.h3`
 const TaskItem = (props) => {
   const router = useNavigate();
   const dispatch = useDispatch();
+console.log(props.task);
   const tasks = useSelector((state) => state.tasks.tasks);
   const listBlocks = useSelector((state) => state.kindTasks.kind);
-  function removeTask(task) {
+
+  async function removeTask(task) {
     dispatch({
       type: "CHANGE_TASKS",
       payload: tasks.filter((t) => t.id !== task.id),
     });
-  }
-
-  function ucFirst(str) {
-    if (!str) return str;
-
-    return str[0].toUpperCase() + str.slice(1);
+    await fetch(`https://jsonplaceholder.typicode.com/posts/` + task.id, {
+      method: "DELETE",
+    });
   }
 
   return (

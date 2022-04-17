@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import find from "../assets/img/find.svg";
 
 const FindInput = styled.input`
   width: 100%;

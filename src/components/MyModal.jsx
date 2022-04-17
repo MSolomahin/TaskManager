@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const SModalContent = styled.div`
   padding: 35px;
@@ -24,13 +24,13 @@ const SModal = styled.div`
   display: ${(props) => (props.visible ? "flex" : "none")};
 `;
 
-const MyModal = ({ children}) => {
-    const dispatch = useDispatch();
-    const visible = useSelector(state => state.modal.flag);
+const MyModal = ({ children }) => {
+  const dispatch = useDispatch();
+  const visible = useSelector((state) => state.modal.flag);
 
-    const setUnvisibleModal = (flag) => {
-        dispatch({type: "VISIBLE_MODAL", payload: flag})
-    }
+  const setUnvisibleModal = (flag) => {
+    dispatch({ type: "VISIBLE_MODAL", payload: flag });
+  };
   return (
     <SModal visible={visible} onClick={() => setUnvisibleModal(false)}>
       <SModalContent

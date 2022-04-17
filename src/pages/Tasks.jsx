@@ -1,4 +1,3 @@
-import "../App.css";
 import React, { useState, useEffect } from "react";
 import TaskList from "../components/TaskList"
 import GlobalStyles from "../styles/global";
@@ -11,7 +10,6 @@ import axios from "axios";
 import { useFetching } from "../hooks/useFetching";
 import { getPageCount } from "../utils/pages";
 import { getPageArray } from "../utils/pages";
-import MyButton from "../components/UI/MyButton";
 import {useDispatch, useSelector} from "react-redux";
 import Pagination from "../components/Pagination";
 
@@ -48,7 +46,7 @@ function Tasks() {
   }
 
   return (
-    <div>
+    <>
       <GlobalStyles />
       <Header context={"Task Manager"} />
       <div className="app">
@@ -72,7 +70,7 @@ function Tasks() {
         )}
         <Pagination pagesArray={pagesArray} changeTask={changeTask} />
       </div>
-    </div>
+    </>
   );
 }
 
