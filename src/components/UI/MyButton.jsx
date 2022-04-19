@@ -14,6 +14,7 @@ const Mybtn = styled.button`
 
   :hover {
     background: #ffefc6;
+    cursor: pointer;
   }
 
   :focus {

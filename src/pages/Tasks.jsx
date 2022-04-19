@@ -12,6 +12,9 @@ import { getPageCount } from "../utils/pages";
 import { getPageArray } from "../utils/pages";
 import {useDispatch, useSelector} from "react-redux";
 import Pagination from "../components/Pagination";
+import Context from "../context";
+import Loader from "../utils/Loader"
+
 
 function Tasks() {
 
@@ -48,28 +51,30 @@ function Tasks() {
   return (
     <>
       <GlobalStyles />
-      <Header context={"Task Manager"} />
-      <div className="app">
-        <MyModal>
-          <CreateTask />
-        </MyModal>
-        <ControlPanel
-          setFind={setFind}
-          sort={sort}
-          setSort={setSort}
-          option={[
-            { value: "title", name: "По названию" },
-            { value: "body", name: "По описанию" },
-          ]}
-        />
-        {taskError && <h1>{taskError}</h1>}
-        {isTaskLoading ? (
-          <h1>Идет загрузка...</h1>
-        ) : (
-          <TaskList tasks={SearchAndFilterTasks} />
-        )}
-        <Pagination pagesArray={pagesArray} changeTask={changeTask} />
-      </div>
+      <Context.Provider value={{ changeTask }} >
+        <Header context={"Task Manager"} />
+        <div className="app">
+          <MyModal>
+            <CreateTask />
+          </MyModal>
+          <ControlPanel
+            setFind={setFind}
+            sort={sort}
+            setSort={setSort}
+            option={[
+              { value: "title", name: "По названию" },
+              { value: "body", name: "По описанию" },
+            ]}
+          />
+          {taskError && <h1>{taskError}</h1>}
+          {isTaskLoading ? (
+            <Loader/>
+          ) : (
+            <TaskList tasks={SearchAndFilterTasks} />
+          )}
+          <Pagination pagesArray={pagesArray} changeTask={changeTask} />
+        </div>
+      </Context.Provider>
     </>
   );
 }

@@ -4,6 +4,9 @@ import MyButton from "./UI/MyButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ucFirst from "../utils/function";
+import propTypes from "prop-types"
+
+
 
 const Item = styled.div`
   display: flex;
@@ -24,10 +27,17 @@ const TitleItem = styled.h3`
   margin-bottom: 20px;
 `;
 
-const TaskItem = (props) => {
+const SBtnBlock = styled.div`
+  display: flex;
+`;
+
+const STextBlock = styled.div`
+  margin-bottom: 12px;
+`;
+
+const TaskItem = ({task}) => {
   const router = useNavigate();
   const dispatch = useDispatch();
-console.log(props.task);
   const tasks = useSelector((state) => state.tasks.tasks);
   const listBlocks = useSelector((state) => state.kindTasks.kind);
 
@@ -43,20 +53,23 @@ console.log(props.task);
 
   return (
     <Item listBlocks={listBlocks}>
-      <div style={{ marginBottom: "12px" }}>
+      {console.log(task)}
+      <STextBlock>
         <TitleItem>
-          {props.task.id}. {ucFirst(props.task.title)}
+          {task.id}. {ucFirst(task.title)}
         </TitleItem>
-        <p>{props.task.body}</p>
-      </div>
-      <div style={{ display: "flex" }}>
-        <MyButton onClick={() => router(`/tasks/${props.task.id}`)}>
-          Open
-        </MyButton>
-        <MyButton onClick={() => removeTask(props.task)}>Done</MyButton>
-      </div>
+        <p>{ucFirst(task.body)}</p>
+      </STextBlock>
+      <SBtnBlock>
+        <MyButton onClick={() => router(`/tasks/${task.id}`)}>Open</MyButton>
+        <MyButton onClick={() => removeTask(task)}>Done</MyButton>
+      </SBtnBlock>
     </Item>
   );
 };
+
+TaskItem.propTypes = {
+  task: propTypes.object.isRequired,
+}
 
 export default TaskItem;

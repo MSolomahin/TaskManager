@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import MyButton from "./UI/MyButton";
 import styled from "styled-components";
+import Context from "../context";
 
 const SPagination = styled.div`
   margin: 20px 0;
 `;
-const Pagination = ({ pagesArray, changeTask }) => {
+const Pagination = ({ pagesArray }) => {
+  const { changeTask } = useContext(Context);
   return (
     <SPagination>
       {pagesArray.map((p, index) => {
